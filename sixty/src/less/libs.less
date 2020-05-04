@@ -149,7 +149,28 @@
 }
 
 .custom-block(@content){
-    @media screen and (max-width: 1300px){
+    @media screen and (max-width: 1600px){
         @content();
     }
+}
+@-webkit-keyframes keyanim {
+  0% {
+    -webkit-transform: rotateY(0) translateY(-10%);
+    transform: rotateY(0) translateY(-10%)
+  }
+  100% {
+    -webkit-transform: rotateY(25deg) translateY(0);
+    transform: rotateY(25deg) translateY(0)
+  }
+}
+
+@keyframes keyanim {
+  0% {
+    -webkit-transform: rotateY(0) translateY(-10%);
+    transform: rotateY(0) translateY(-10%)
+  }
+  100% {
+    -webkit-transform: rotateY(25deg) translateY(0);
+    transform: rotateY(25deg) translateY(0)
+  }
 }

@@ -1,10 +1,5 @@
 html{
-  font-family: 'Gilroy';
-  font-weight: 400;
-  font-size: @sizeBasik;
-  background: #fff;
-  color: @colorDark;
-  letter-spacing: 1px;
+
   /*.sm(font-size, 18px);*/
   /*
   .xs(font-size, 14px);*/
@@ -12,13 +7,19 @@ html{
 body{  
   overflow-x: hidden;
   .transition(1s);
+  font-family: 'Gilroy';
+  font-weight: 400;
+  font-size: @sizeBasik;
+  background: #fff;
+  color: @colorDark;
+  letter-spacing: 1px;
 }
 body .wrap {
     max-width: 100%;
     padding: 0;
 }
 *{
-   outline: 0px solid #000;
+   outline: 0px solid;
 } 
 .mob-visible{display: none !important;}
 .sm-block({
@@ -341,7 +342,7 @@ a{
   .md-block({
     max-width: 290px;
   });
-  outline: 1px solid #ff0000;
+  outline: 0px solid #f9f303;
 }
 .light{
   font-weight: 300;
@@ -429,6 +430,9 @@ h1, .h1{
   margin: 0px 0 15px;
   font-size: 51px;
   color: #fff;
+  .lg-block({
+    font-size: 46px;
+  });
   .md-block({
     font-size: 26px;
   });
@@ -466,6 +470,9 @@ h5, .h5{
   font-weight: 500;
   font-size: 17px;
   color: #fff;
+  .md-block({
+    font-size: 15px;
+  });
 }
 h6{
   line-height: 1.45;
@@ -474,6 +481,20 @@ h6{
 }
 b{
   font-weight: 700;
+}
+
+.md-hide{
+  .md-block({
+    display: none !important;
+  });
+}
+
+.desctop-hide{
+  display: none !important;
+}
+.mobile-visible{display: none ;}
+.hide{
+  display: none !important;
 }
 .md-visible{
   display: none;
@@ -486,19 +507,6 @@ b{
   .md-block({
     display: flex;
   });
-}
-.md-hide{
-  .md-block({
-    display: none;
-  });
-}
-
-.desctop-hide{
-  display: none !important;
-}
-.mobile-visible{display: none ;}
-.hide{
-  display: none !important;
 }
 img{
   max-width: 100%;

@@ -41,7 +41,8 @@ function styles(){
 
 function img(){
     return gulp.src('./src/img/**/*')
-               .pipe(gulp.dest('./build/img'))
+        .pipe(gulp.dest('./build/img'))
+        .pipe(gulpif(isSync, browserSync.stream()))
 }
 
 function scriptsDev(){
@@ -75,7 +76,8 @@ function watch(){
     gulp.watch('./src/less/**/*.less', styles);
     gulp.watch('./src/**/*.html', html);
     gulp.watch('./smartgrid.js', grid);
-    gulp.watch('./src/js/**/*.js', scriptsDev);
+    gulp.watch('./src/assets/js/**/*.js', scriptsDev);
+    gulp.watch('./src/img/**/*.js', img);
 }
 
 function grid(done){
@@ -93,7 +95,7 @@ function grid(done){
 // let build = gulp.series(clear,
 //     gulp.parallel(styles, img, html, scriptsDev)
 // );
-let build = gulp.series(
+let build = gulp.series(clear,
     gulp.parallel(styles, img, html, scriptsDev)
 );
 
